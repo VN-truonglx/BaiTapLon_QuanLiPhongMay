@@ -1,0 +1,192 @@
+Create Database QlyPhongMay
+On 
+(	Name = QuanLiPhongMay_data,
+	Filename = 'D:\How to programming with C#\BTL nhóm 4\SQL Code\QuanLiPhongMay.mdf',
+	size = 5,
+	Maxsize = 10,
+	filegrowth = 2
+)
+Log on
+(	Name = ql_sv_log,
+	Filename = 'D:\How to programming with C#\BTL nhóm 4\SQL Code\QuanLiPhongMay.ldf',
+	size = 5mb,
+	Filegrowth = 2mb
+)
+
+CREATE TABLE tblMayTinh (
+    [MaMay]       nvarchar (50) NOT NULL,
+    [TenMay]      nvarchar (50) NULL,
+    [MaPM]        nvarchar (50) NULL,
+    [MaOCung]     nvarchar (50) NULL,
+    [MaDungLuong] nvarchar (50) NULL,
+    [MaChip]      nvarchar (50) NULL,
+    [MaRAM]       nvarchar (50) NULL,
+    [MaTocDo]     nvarchar (50) NULL,
+    [MaManHinh]   nvarchar (50) NULL,
+    [MaCoMH]      nvarchar (50) NULL,
+    [MaChuot]     nvarchar (50) NULL,
+    [MaBanPhim]   nvarchar (50) NULL,
+    [MaODia]      nvarchar (50) NULL,
+    [GhiChu]      nvarchar (50) NULL,
+)
+
+CREATE TABLE [dbo].[tblCaHoc]
+(
+	[MaCa] nvarchar (50) NOT NULL PRIMARY KEY, 
+    [TenCa] nvarchar (50) NULL
+)
+CREATE TABLE [dbo].[tblMonThucHanh]
+(
+	[MaMon] nvarchar (50) NOT NULL PRIMARY KEY, 
+    [TenMon] nvarchar (50) NULL
+)
+CREATE TABLE [dbo].[tblLichThucHanh]
+(
+	[MaSTT] nvarchar (50) NOT NULL PRIMARY KEY, 
+    [MaPM] nvarchar (50) NULL, 
+    [MaSV] nvarchar (50) NULL, 
+    [MaGV] nvarchar (50) NULL, 
+    [MaLop] nvarchar (50) NULL, 
+    [MaMon] nvarchar (50) NULL, 
+    [MaCa] nvarchar (50) NULL, 
+    [Thu] nvarchar (50) NULL, 
+    [NgayBD] nvarchar (50) NULL, 
+    [NgayKT] nvarchar (50) NULL
+)
+
+
+
+CREATE TABLE [dbo].[tblLop]
+(
+	[MaLop] nvarchar (50) NOT NULL PRIMARY KEY, 
+    [SiSo] nvarchar (50) NULL, 
+    [TenLop] nvarchar (50) NULL
+)
+
+CREATE TABLE [dbo].[tblSinhVien]
+(
+	[MaSV] nvarchar (50) NOT NULL PRIMARY KEY, 
+    [TenSV] nvarchar (50) NULL, 
+    [MaPM] nvarchar (50) NULL, 
+    [NamSinh] nvarchar (50) NULL, 
+    [GioiTinh] nvarchar (50) NULL,
+	[MaTinh] nvarchar (50) NULL, 
+    [DienThoai] nvarchar (50) NULL
+)
+
+CREATE TABLE [dbo].[tblTinh]
+(
+	[MaTinh] nvarchar (50) NOT NULL PRIMARY KEY, 
+    [TenTinh] nvarchar (50) NULL
+)
+CREATE TABLE [dbo].[tblMaODia]
+(
+	[MaODia] nvarchar (50) NOT NULL PRIMARY KEY, 
+    [TenODia] nvarchar (50) NULL
+)
+CREATE TABLE [dbo].[tblManHinh]
+(
+	[MaManHinh] nvarchar (50) NOT NULL PRIMARY KEY, 
+    [TenManHinh] nvarchar (50) NULL
+)
+CREATE TABLE [dbo].[tblPhongMay] (
+    [MaPM]      nvarchar (50) NOT NULL PRIMARY KEY,
+    [TenPM]     nvarchar (50) NULL,
+    [SoMay]     nvarchar (50) NULL,
+    [DiaDiem]   nvarchar (50) NULL,
+    [DienThoai] nvarchar (50) NULL,
+    
+)
+
+
+CREATE TABLE [dbo].[tblMaChuot]
+(
+	[MaChuot] nvarchar (50) NOT NULL PRIMARY KEY, 
+    [TenChuot] nvarchar (50) NULL
+)
+CREATE TABLE [dbo].[tblMaBanPhim]
+(
+	[MaBanPhim] nvarchar (50) NOT NULL PRIMARY KEY, 
+    [TenBanPhim] nvarchar (50) NULL
+)
+CREATE TABLE [dbo].[tblGiaoVien]
+(
+	[MaGV] nvarchar (50) NOT NULL PRIMARY KEY, 
+    [TenGV] nvarchar (50) NULL,
+	[DienThoai] nvarchar (50) NULL,
+)
+CREATE TABLE [dbo].[tblOCung]
+(
+	[MaOCung] nvarchar (50) NOT NULL PRIMARY KEY, 
+    [TenOCung] nvarchar (50) NULL,
+)
+CREATE TABLE [dbo].[tblDungLuong]
+(
+	[MaDungLuong] nvarchar (50) NOT NULL PRIMARY KEY, 
+    [TenDungLuong] nvarchar (50) NULL,
+)
+CREATE TABLE [dbo].[tblChip]
+(
+	[MaChip] nvarchar (50) NOT NULL PRIMARY KEY, 
+    [TenChip] nvarchar (50) NULL,
+)
+CREATE TABLE [dbo].[tblRAM]
+(
+	[MaRAM] nvarchar (50) NOT NULL PRIMARY KEY, 
+    [TenRAM] nvarchar (50) NULL,
+)
+CREATE TABLE [dbo].[tblTocDo]
+(
+	[MaTocDo] nvarchar (50) NOT NULL PRIMARY KEY, 
+    [TenTocDo] nvarchar (50) NULL,
+)
+CREATE TABLE [dbo].[tblCoManHinh]
+(
+	[MaCoMH] nvarchar (50) NOT NULL PRIMARY KEY, 
+    [TenCoMH] nvarchar (50) NULL,
+)
+-- Thêm khóa ngoại trên tblLichThucHanh
+Alter table tblLichThucHanh
+Add constraint FK_MaPM Foreign key (MaPM) references tblPhongMay
+Alter table tblLichThucHanh
+Add constraint FK_MaSV Foreign key (MaSV) references tblSinhVien
+Alter table tblLichThucHanh
+Add constraint FK_MaGV Foreign key (MaGV) references tblGiaoVien
+Alter table tblLichThucHanh
+Add constraint FK_MaLop Foreign key (MaLop) references tblLop
+Alter table tblLichThucHanh
+Add constraint FK_MaMon Foreign key (MaMon) references tblMonThucHanh
+Alter table tblLichThucHanh
+Add constraint FK_MaCa Foreign key (MaCa) references tblCaHoc
+
+
+
+-- Thêm khóa ngoại trên tblMayTinh
+Alter table tblMayTinh
+Add constraint tblMayTinh_FK_MaPM Foreign key (MaPM) references tblPhongMay
+Alter table tblMayTinh
+Add constraint FK_MaOCung Foreign key (MaOCung) references tblOCung
+Alter table tblMayTinh
+Add constraint FK_MaDungLuong Foreign key (MaDungLuong) references tblDungLuong
+Alter table tblMayTinh
+Add constraint FK_MaChip Foreign key (MaChip) references tblChip
+Alter table tblMayTinh
+Add constraint FK_MaRAM Foreign key (MaRAM) references tblRAM
+Alter table tblMayTinh
+Add constraint FK_MaTocDo Foreign key (MaTocDo) references tblTocDo
+Alter table tblMayTinh
+Add constraint FK_MaManHinh Foreign key (MaManHinh) references tblManHinh
+Alter table tblMayTinh
+Add constraint FK_MaCoMH Foreign key (MaCoMH) references tblCoManHinh
+Alter table tblMayTinh
+Add constraint FK_MaChuot Foreign key (MaChuot) references tblMaChuot
+Alter table tblMayTinh
+Add constraint FK_MaBanPhim Foreign key (MaBanPhim) references tblMaBanPhim
+Alter table tblMayTinh
+Add constraint FK_MaODia Foreign key (MaODia) references tblMaODia
+ 
+-- Thêm khóa ngoại trên tblSinhVien
+Alter table tblSinhVien
+Add constraint tblSinhVien_FK_MaPM Foreign key (MaPM) references tblPhongMay
+Alter table tblSinhVien
+Add constraint FK_Tinh Foreign key (MaTinh) references tblTinh
