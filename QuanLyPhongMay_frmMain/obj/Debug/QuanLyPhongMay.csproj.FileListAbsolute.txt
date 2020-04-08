@@ -1,9 +1,0 @@
-C:\Users\Acer\source\repos\BaiTapLon_QuanLiPhongMay\QuanLyPhongMay\obj\Debug\QuanLyPhongMay.csprojAssemblyReference.cache
-C:\Users\Acer\source\repos\BaiTapLon_QuanLiPhongMay\QuanLyPhongMay\obj\Debug\QuanLyPhongMay.ChildForms.QuanLyLichThucHanh.frmLichThucHanh.resources
-C:\Users\Acer\source\repos\BaiTapLon_QuanLiPhongMay\QuanLyPhongMay\obj\Debug\QuanLyKhachSancode.QLPM.resources
-C:\Users\Acer\source\repos\BaiTapLon_QuanLiPhongMay\QuanLyPhongMay\obj\Debug\QuanLyPhongMay.Properties.Resources.resources
-C:\Users\Acer\source\repos\BaiTapLon_QuanLiPhongMay\QuanLyPhongMay\obj\Debug\QuanLyPhongMay.csproj.GenerateResource.cache
-C:\Users\Acer\source\repos\BaiTapLon_QuanLiPhongMay\QuanLyPhongMay\bin\Debug\QuanLyPhongMay.exe
-C:\Users\Acer\source\repos\BaiTapLon_QuanLiPhongMay\QuanLyPhongMay\bin\Debug\QuanLyPhongMay.pdb
-C:\Users\Acer\source\repos\BaiTapLon_QuanLiPhongMay\QuanLyPhongMay\obj\Debug\QuanLyPhongMay.exe
-C:\Users\Acer\source\repos\BaiTapLon_QuanLiPhongMay\QuanLyPhongMay\obj\Debug\QuanLyPhongMay.pdb
