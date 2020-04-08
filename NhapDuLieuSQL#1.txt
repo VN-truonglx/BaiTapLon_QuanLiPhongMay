@@ -1,0 +1,30 @@
+insert into tblCaHoc values ('CH01', 'Ca 1') 
+insert into tblCaHoc values ('CH02', 'Ca 2') 
+insert into tblCaHoc values ('CH03', 'Ca 3') 
+insert into tblCaHoc values ('CH04', 'Ca 4') 
+select * from tblCaHoc
+
+insert into tblMonThucHanh values ('MTH01', 'Mon Tin')
+insert into tblMonThucHanh values ('MTH02', 'Mon TD')
+insert into tblMonThucHanh values ('MTH03', 'Mon Li')
+insert into tblMonThucHanh values ('MTH04', 'Mon Hoa')
+select * from tblMonThucHanh
+
+insert into tblLop values ('L01', 10, 'Lop A')
+insert into tblLop values ('L02', 20, 'Lop B')
+insert into tblLop values ('L03', 30, 'Lop C')
+select * from tblLop
+
+insert into tblTinh values ('T01', 'Ha Noi')
+insert into tblTinh values ('T02', 'TPHCM')
+insert into tblTinh values ('T03', 'Hai Duong')
+select * from tblTinh
+
+insert into tblMaODia values ('OD01', 'O CD')
+insert into tblMaODia values ('OD02', 'O DVD')
+select * from tblMaODia
+
+insert into tblMaChuot values ('C01', 'Logitech')
+insert into tblMaChuot values ('C02', 'Corsair')
+insert into tblMaChuot values ('C03', 'Razer')
+select * from tblMaChuot
